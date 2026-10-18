@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Hanken Grotesk Variable', system-ui, sans-serif;
+    font-size: 15px;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-ivory text-ink antialiased;
+    min-height: 100vh;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply text-plum-900;
+  }
+  ::selection {
+    background: #e3bcc1;
+    color: #27111f;
+  }
+  /* One consistent, visible keyboard focus ring across the app */
+  :focus-visible {
+    outline: none;
+    @apply shadow-focus;
+  }
+  button,
+  [role='button'],
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+  input[type='date'],
+  input[type='time'] {
+    min-height: 2.625rem;
+  }
+}
+
+@layer components {
+  .font-numeric {
+    font-variant-numeric: tabular-nums;
+  }
+  .scroll-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #cdb3c7 transparent;
+  }
+  .skeleton {
+    @apply relative overflow-hidden rounded-lg bg-cream;
+  }
+  .skeleton::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.65), transparent);
+    animation: shimmer 1.4s infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

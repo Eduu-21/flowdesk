@@ -1,0 +1,22 @@
+{
+  "name": "flowdesk",
+  "version": "1.0.0",
+  "private": true,
+  "description": "FlowDesk - business management and appointment platform for beauty and wellness studios",
+  "scripts": {
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client",
+    "dev": "concurrently -n server,client -c magenta,cyan \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "db:setup": "npm run db:setup --prefix server",
+    "db:reset": "npm run db:reset --prefix server",
+    "build": "npm run build --prefix server && npm run build --prefix client",
+    "test": "npm test --prefix server && npm test --prefix client",
+    "lint": "npm run lint --prefix server && npm run lint --prefix client",
+    "format": "prettier --write \"**/*.{ts,tsx,json,css,md,sql}\" --ignore-path .gitignore"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1",
+    "prettier": "^3.3.3"
+  }
+}
