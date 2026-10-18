@@ -8,6 +8,11 @@ FlowDesk gives a studio owner one calm place to run the day: see today's appoint
 - **Backend:** Node.js, Express, TypeScript, Zod validation, JWT authentication (bcrypt password hashing)
 - **Database:** PostgreSQL (plain SQL schema and seed, no ORM, no Docker)
 
+
+## Dashboard Preview
+
+![FlowDesk dashboard](screenshots/dashboard.png)
+
 ---
 
 ## What you can do in it
